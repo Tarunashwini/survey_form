@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment 
 metadata:
-  name: python-app
+  name: streamlit-python-app
   labels:
     app: python-app
     tier: frontend

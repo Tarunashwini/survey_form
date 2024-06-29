@@ -27,7 +27,7 @@ if "page" not in st.session_state:
     st.session_state.page = "survey"
 
 def error():
-    st.warning("Please fill all the required questions'")
+    st.warning("Please fill all the required questions")
 
 # Navigation logic
 if st.session_state.page == "survey":
