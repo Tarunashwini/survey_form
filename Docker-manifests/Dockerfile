@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir streamlit==1.25.0
 EXPOSE 8501
 
 # Command to run streamlit app
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "survey_form/application/app.py"]
