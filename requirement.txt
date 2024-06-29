@@ -1,0 +1,2 @@
+Python 3.11.9
+Streamlit, version 1.25.0
