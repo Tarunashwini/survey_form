@@ -21,10 +21,13 @@ spec:
           image: tarunashwini/survey_form:v1.0
           volumeMounts:
             - mountPath: /mnt/data
-              name: Survey_form_data
+              name: survey-form-data
           ports:
             - containerPort: 8501
-
+      volumes:
+        - name: survey-form-data
+          persistentVolumeClaim:
+            claimName: survey-form-pvc
 
 ---
 apiVersion: v1
@@ -44,15 +47,13 @@ spec:
       targetPort: 8501
 
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: survey_form_pvc
+  name: survey-form-pvc
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 3Gi
-
