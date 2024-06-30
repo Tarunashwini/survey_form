@@ -14,6 +14,8 @@ WORKDIR /survey_form
 # Install dependencies
 RUN pip install --no-cache-dir streamlit==1.25.0
 
+pip install azure-storage-blob
+
 # Expose the port streamlit runs on
 EXPOSE 8501
 
