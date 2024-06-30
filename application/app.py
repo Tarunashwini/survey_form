@@ -5,7 +5,8 @@ import os
 # Define your function to save data
 def save_data(answer):
     if len(answer) > 2:  # If there are more than 2 elements, it means the answer is from the 'yes' path
-        file_path = 'yes_mydata.csv'
+        file_path = 'mnt/data/yes_mydata.csv'
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)  # Ensure the directory exists
         write_header = not os.path.exists(file_path) or os.path.getsize(file_path) == 0  # Check if file is empty or doesn't exist
         with open(file_path, 'a', newline='') as file:
             csv_writer = csv.writer(file)
@@ -13,7 +14,8 @@ def save_data(answer):
                 csv_writer.writerow(['Have you attended any?', 'Have you participated in any activity?', 'Was it engaging?', 'Do you want to attend more events?', 'Rate your experience:'])
             csv_writer.writerow([answer[0], answer[1], answer[2], answer[3], answer[4]])
     else:  # If there are 2 elements, it means the answer is from the 'no' path
-        file_path = 'no_mydata.csv'
+        file_path = 'mnt/data/no_mydata.csv'
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)  # Ensure the directory exists
         write_header = not os.path.exists(file_path) or os.path.getsize(file_path) == 0  # Check if file is empty or doesn't exist
         with open(file_path, 'a', newline='') as file:
             csv_writer = csv.writer(file)
