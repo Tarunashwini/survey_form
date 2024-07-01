@@ -9,7 +9,7 @@ storage_account_name = "storageforstreamlit"
 connection_string = "DefaultEndpointsProtocol=https;AccountName=storageforstreamlit;AccountKey=xX5KlLkFtHNvBcHv8DKSANjt83SUAchjl3DcJu/Xgm1ShOFqXE4PPZ0jjAE1ImdqsEJWI3hSfsFe+AStekyXaA==;EndpointSuffix=core.windows.net"
 container_name = "streamlitstoragecontainer"
 
-def append_to_blob_storage(file_path, file_name):
+def upload_to_blob_storage(file_path, file_name):
     try:
         # Create a BlobServiceClient using the connection string
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
