@@ -18,7 +18,7 @@ spec:
     spec: 
       containers: 
         - name: python-app
-          image: tarunashwini/survey_form:v1.0
+          image: tarunashwini/survey_form:v1.3
           volumeMounts:
             - mountPath: /mnt/data
               name: survey-form-data
