@@ -14,7 +14,7 @@ def save_data(answer):
             if write_header:
                 csv_writer.writerow(['Have you attended any?', 'Have you participated in any activity?', 'Was it engaging?', 'Do you want to attend more events?', 'Rate your experience:'])
             csv_writer.writerow([answer[0], answer[1], answer[2], answer[3], answer[4]])
-        up.upload_to_blob_storage('mnt/data/yes_mydata.csv','yes_response')
+        up.upload_to_blob_storage('mnt/data/yes_mydata.csv','yes_response.csv')
     else:  # If there are 2 elements, it means the answer is from the 'no' path
         file_path = 'mnt/data/no_mydata.csv'
         os.makedirs(os.path.dirname(file_path), exist_ok=True)  # Ensure the directory exists
@@ -24,7 +24,7 @@ def save_data(answer):
             if write_header:
                 csv_writer.writerow(['Have you attended any?', 'Why didn\'t you attend?'])
             csv_writer.writerow([answer[0], answer[1]])
-        up.upload_to_blob_storage('mnt/data/no_mydata.csv','no_response')
+        up.upload_to_blob_storage('mnt/data/no_mydata.csv','no_response.csv')
     st.write('Your data has been recorded successfully!')
 
 # Initialize session state
