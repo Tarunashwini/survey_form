@@ -24,6 +24,6 @@ def upload_to_blob_storage(file_path, file_name):
     
     except Exception as e:
         print(f"Failed to upload {file_name} due to {str(e)}")
-q
+
 # Example usage
 # upload_to_blob_storage("path/to/your/file.txt", "uploaded_file_name.txt")
