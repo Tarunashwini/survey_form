@@ -11,8 +11,8 @@ def save_data(answer):
         write_header = not os.path.exists(file_path) or os.path.getsize(file_path) == 0  # Check if file is empty or doesn't exist
         with open(file_path, 'a', newline='') as file:
             csv_writer = csv.writer(file)
-            if write_header:
-                csv_writer.writerow(['Have you attended any?', 'Have you participated in any activity?', 'Was it engaging?', 'Do you want to attend more events?', 'Rate your experience:'])
+            #if write_header:
+                #csv_writer.writerow(['Have you attended any?', 'Have you participated in any activity?', 'Was it engaging?', 'Do you want to attend more events?', 'Rate your experience:'])
             csv_writer.writerow([answer[0], answer[1], answer[2], answer[3], answer[4]])
         up.upload_to_blob_storage('mnt/data/yes_mydata.csv','yes_response.csv')
     else:  # If there are 2 elements, it means the answer is from the 'no' path
@@ -21,8 +21,8 @@ def save_data(answer):
         write_header = not os.path.exists(file_path) or os.path.getsize(file_path) == 0  # Check if file is empty or doesn't exist
         with open(file_path, 'a', newline='') as file:
             csv_writer = csv.writer(file)
-            if write_header:
-                csv_writer.writerow(['Have you attended any?', 'Why didn\'t you attend?'])
+            #if write_header:
+                #csv_writer.writerow(['Have you attended any?', 'Why didn\'t you attend?'])
             csv_writer.writerow([answer[0], answer[1]])
         up.upload_to_blob_storage('mnt/data/no_mydata.csv','no_response.csv')
     st.write('Your data has been recorded successfully!')
