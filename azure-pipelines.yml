@@ -37,7 +37,7 @@ stages:
         tags: '$(tag)'
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests/Deployment.yaml'
+        SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests'
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         
