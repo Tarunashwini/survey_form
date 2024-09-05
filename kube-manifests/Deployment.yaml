@@ -43,7 +43,7 @@ spec:
     app: python-app
   ports: 
     - name: http
-      port: 8501
+      port: 80
       targetPort: 8501
 
 ---
